@@ -7,7 +7,7 @@ class StartDatePage {
     readonly yearField: Locator
     readonly continueButton: Locator
 
-    constructor(page) {
+    constructor(page: Page) {
         this.page = page
         this.dayField = this.page.getByRole("textbox", { name: "Day" })
         this.monthField = this.page.getByRole("textbox", { name: "Month" })
