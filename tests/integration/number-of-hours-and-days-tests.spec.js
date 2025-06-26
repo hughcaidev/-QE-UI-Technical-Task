@@ -3,8 +3,8 @@ import NumberOfHoursPage from "../../pages/NumberOfHoursPage"
 import NumberOfDaysPage from "../../pages/numberOfDaysPage"
 
 test.describe("Integration Tests - Number of hours and number of days fields", () => {
-    let numberOfHoursPage: NumberOfHoursPage
-    let numberOfDaysPage: NumberOfDaysPage
+    let numberOfHoursPage: NumberOfHoursPage;
+    let numberOfDaysPage: NumberOfDaysPage;
 
     test.beforeEach(async ({ page }) => {
         numberOfHoursPage = new NumberOfHoursPage(page)

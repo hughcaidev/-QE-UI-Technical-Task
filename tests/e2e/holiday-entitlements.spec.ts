@@ -9,7 +9,7 @@ import NumberOfHoursPage from "../../pages/NumberOfHoursPage"
 import NumberOfHoursPerShiftPage from "../../pages/NumberOfHoursPerShiftPage"
 import EndDatePage from "../../pages/EndDatePage"
 
-test.describe("E2E Tests - Users can calculate their holiday entitlement", () => {
+test.describe("E2E Tests - Holiday entitlement", () => {
     let irregularHoursPage: IrregularHoursPage
     let holidayEntitlementBasisPage: HolidayEntitlementBasisPage
     let workOutHolidayPage: WorkOutHolidayPage

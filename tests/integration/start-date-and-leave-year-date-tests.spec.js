@@ -1,23 +1,16 @@
 import test, { expect } from "@playwright/test"
 import StartDatePage from "../../pages/StartDatePage"
 import LeaveYearPage from "../../pages/LeaveYearPage"
-import moment from "moment"
+import employmentStartDates from "../../data/dates"
 
-var day = moment("01/07/2024", "DD/MM/YYYY")
-const employmentStartDate = day.format("DD/MM/YYYY")
-const employmentStartDateAsString = day.format("DD MMMM YYYY")
-const dateSixMonthAgo = moment("01/07/2024", "DD/MM/YYYY")
-    .subtract(6, "M")
-    .format("DD/MM/YYYY")
-const date364DaysAgo = moment("01/07/2024", "DD/MM/YYYY")
-    .subtract(364, "day")
-    .format("DD/MM/YYYY")
-const dateOneYearAgo = moment("01/07/2024", "DD/MM/YYYY")
-    .subtract(1, "year")
-    .format("DD/MM/YYYY")
-const dateOneDayLater = moment("01/07/2024", "DD/MM/YYYY")
-    .add(1, "day")
-    .format("DD/MM/YYYY")
+const {
+    employmentStartDate,
+    employmentStartDateAsString,
+    startDateSixMonthAgo,
+    startDate364DaysAgo,
+    startDateOneDayLater,
+    startDateOneYearAgo,
+} = employmentStartDates
 
 test.describe("Integration Tests - Integration", () => {
     let startDatePage: StartDatePage
@@ -32,20 +25,20 @@ test.describe("Integration Tests - Integration", () => {
         )
     })
 
-    test("Users enter a valid start employment date and leave year", async ({
+    test("Users can enter a valid start employment date and leave year", async ({
         page,
     }) => {
         await startDatePage.submitDate(employmentStartDate)
-        await leaveYearPage.submitDate(dateSixMonthAgo)
+        await leaveYearPage.submitDate(startDateSixMonthAgo)
 
         await expect(page.getByText("Number of days worked per")).toBeVisible()
     })
 
-    test("Users enter a leave year that's within one year earlier than the start date", async ({
+    test("Users can enter a leave year that's within one year earlier than the start date", async ({
         page,
     }) => {
         await startDatePage.submitDate(employmentStartDate)
-        await leaveYearPage.submitDate(date364DaysAgo)
+        await leaveYearPage.submitDate(startDate364DaysAgo)
 
         await expect(page.getByText("Number of days worked per")).toBeVisible()
     })
@@ -69,7 +62,7 @@ test.describe("Integration Tests - Integration", () => {
         page,
     }) => {
         await startDatePage.submitDate(employmentStartDate)
-        await leaveYearPage.submitDate(dateOneDayLater)
+        await leaveYearPage.submitDate(startDateOneDayLater)
 
         await expect(page.getByTitle("There is a problem")).toBeVisible()
         await expect(page.getByRole("alert")).toContainText(
@@ -84,7 +77,7 @@ test.describe("Integration Tests - Integration", () => {
         page,
     }) => {
         await startDatePage.submitDate(employmentStartDate)
-        await leaveYearPage.submitDate(dateOneYearAgo)
+        await leaveYearPage.submitDate(startDateOneYearAgo)
 
         await expect(page.getByTitle("There is a problem")).toBeVisible()
         await expect(page.getByRole("alert")).toContainText(
