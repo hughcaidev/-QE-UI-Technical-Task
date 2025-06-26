@@ -107,13 +107,17 @@ test.describe("E2E Tests - Holiday entitlement", () => {
     }) => {
         await irregularHoursPage.selectNoOption()
         await holidayEntitlementBasisPage.selectHoursWorkedPerWeekOption()
+        await workOutHolidayPage.selectStartingAndEndingPartWayOption()
         await startDatePage.submitDate("01/04/2025")
         await endDatePage.submitDate("01/10/2025")
         await numberOfHoursPage.submitNumberOfHours("40")
         await numberOfDaysPage.submitNumberOfDays("5")
 
         await expect(page.locator("#result-info")).toContainText(
-            "The statutory entitlement is 14.2 hours holiday."
+            "The statutory entitlement is 113 hours holiday."
+        )
+        await expect(page.url()).toContain(
+            "/calculate-your-holiday-entitlement/y/regular/hours-worked-per-week/starting-and-leaving/2025-04-01/2025-10-01/40.0/5.0"
         )
     })
 

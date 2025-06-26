@@ -30,7 +30,7 @@ class WorkOutHolidayPage {
         await this.page.getByRole("button", { name: "Continue" }).click()
     }
 
-    async selectStartingAndEndingPartWay() {
+    async selectStartingAndEndingPartWayOption() {
         await this.page
             .getByRole("radio", { name: "for someone starting and" })
             .check()
