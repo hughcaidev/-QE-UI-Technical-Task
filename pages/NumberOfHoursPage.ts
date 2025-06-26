@@ -5,18 +5,20 @@ class NumberOfHoursPage {
     readonly numberOfHoursField: Locator
     readonly continueButton: Locator
 
-    constructor(page) {
+    constructor(page: Page) {
         this.page = page
         this.numberOfHoursField = this.page.getByRole("textbox", {
             name: "Number of hours worked per",
         })
-        this.continueButton = this.page.getByRole("button", {
-            name: "Continue",
+        this.continueButton = this.page.locator("button", {
+            hasText: "Continue",
         })
     }
 
     async enterHours(numberOfHours: string) {
-        await this.numberOfHoursField.click()
+        await this.page
+            .getByRole("textbox", { name: "Number of hours worked per" })
+            .click()
         await this.numberOfHoursField.fill(numberOfHours)
     }
 
