@@ -1,5 +1,5 @@
-import StartDatePage from "./StartDatePage"
+import DatePage from "./date-pages/DatePageTemplate"
 
-class LeaveYearPage extends StartDatePage {}
+class LeaveYearPage extends DatePage {}
 
 export default LeaveYearPage
