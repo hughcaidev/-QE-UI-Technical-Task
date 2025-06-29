@@ -1,0 +1,8 @@
+Accessibility Issues
+
+1. The heading is in a h2 tag - it should be in a h1 tag.
+2. The image does not have an alt tag.
+3. The website page does not adapt to the screen width.
+4. All fields do not have a name tag.
+5. All fields do not have a label.
+5. The email field type is set to text, it should be set to email.

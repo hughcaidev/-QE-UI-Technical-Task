@@ -1,0 +1,17 @@
+Bug Report
+Title - The page heading has the incorrect heading tag
+Description - The heading on the page has the 
+
+Steps
+1. Navigate to http://127.0.0.1:8080/
+2. Open the browser inspector
+3. Enable the element picker
+4. Hover and click on the heading "Accessibility Chat Robot"
+
+Expected Result
+The heading should be in a h1 tag.
+Actual Result
+The heading is in a h2 tag.
+
+Device Specs.
+Windows 11 Pro, Google Chrome 137.0.7151.120
