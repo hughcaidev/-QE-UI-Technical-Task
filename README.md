@@ -55,8 +55,7 @@ Please download and email your solution from a private Github repository you hav
 ### Part 1
 
 To run the tests, run
-`      npx playwright test
-     `
+`npx playwright test`
 
 For the tests, I have choosen to focus on the following sections for testing:
 
@@ -69,7 +68,3 @@ For the tests, I have choosen to focus on the following sections for testing:
 ### Part 2
 
 I placed my list of answers for the accessibility issues inside the part-2 folder.
-
-```
-
-```
