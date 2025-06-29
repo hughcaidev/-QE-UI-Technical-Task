@@ -28,17 +28,17 @@ You can provide your list of answers anywhere you like, but tell us where you ha
 To launch the page locally, follow these simple steps:
 
 1. Install dependencies:
-   ```bash
-   npm install
-   ```
+    ```bash
+    npm install
+    ```
 2. Start the application:
-   ```bash
-   npm start
-   ```
+    ```bash
+    npm start
+    ```
 3. Open your web browser and navigate to:
-   ```bash
-   http://localhost:8080/
-   ```
+    ```bash
+    http://localhost:8080/
+    ```
 
 ## 🕗 Time Allocation
 
@@ -49,3 +49,27 @@ If you have the time and inclination, feel free to attempt Task 2 (bonus task), 
 ## 📨 Presenting/Submitting Your Solution
 
 Please download and email your solution from a private Github repository you have created and send the Zip back to us. Any issues please do get in touch with the recruiter you have been speaking with.
+
+## Solutions
+
+### Part 1
+
+To run the tests, run
+`      npx playwright test
+     `
+
+For the tests, I have choosen to focus on the following sections for testing:
+
+-   Unit tests - The validation for the number of hours field
+-   Unit tests - The validation for the date field
+-   Integration tests - The validation for the number of days field, depending on the number of hours field
+-   Integration tests - The validation for the leave year date field, depending on the employment start date field
+-   E2E tests
+
+### Part 2
+
+I placed my list of answers for the accessibility issues inside the part-2 folder.
+
+```
+
+```
